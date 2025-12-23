@@ -1,4 +1,4 @@
 <header>
     <img src="./images/dolphin.png" class="dolphinHeader">
-    <h5>Dolphin CRM</h5>
+    <h4>Dolphin CRM</h4>
 </header>
