@@ -1,0 +1,140 @@
+
+body {
+    margin: 0;
+    background-color: #E7ECEF;
+    color: #0B2545;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+/*HEADER*/
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 1em;
+    background-color: #003566;
+    color: #F8F9FA;
+}
+
+.dolphinHeader {
+    width: 2.5%; 
+    height: 2.5%;
+}
+
+/*SIDE BAR*/
+aside {
+    width: 10em;
+    background-color: #F8F9FA;
+    color: #3A5A40;
+    height: 100vh;
+    position: fixed;
+    left: 1;
+    top: 3.8em;
+    padding: 1em 1em 0;
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+}
+
+.nav-links li {
+    margin: 1em 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    padding: 0.25em;
+    color: #0B2545;
+}
+
+.nav-links a:hover {
+    background-color: #E9E7D0;
+    border-radius: 0.4em;
+}
+
+.nav-links i {
+  margin-right: 10px;
+}
+
+/*FOOTER*/
+footer {
+    width: 100%;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    background-color: #E7ECEF;
+    border-top: 1px solid #ccc;
+}
+
+/*WELCOME */
+.main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.left {
+    grid-column: 1;
+    padding: 0.5em;
+}
+
+.dolphinHome {
+   width: 80%;
+   height: 92.5%;
+   border-radius: 20px;
+}
+
+.right {
+    margin: 4em 0 0;
+    padding: 3em 3em 0 0;
+    grid-column: 2;
+    text-align: center;
+}
+
+.loginBtn {
+    color: #004175;
+}
+
+.loginBtn:hover {
+    text-decoration: none;
+    color: #848483;
+}
+
+
+/*LOGIN*/
+.loginPage {
+    margin: 4em 0;
+}
+
+.loginPage form {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.loginPage input {
+    width: 30em;
+    margin: 0 0 2em;
+    padding: 0.75em;
+    border: none;
+    border-radius: 5px;
+}
+
+.loginPage button {
+    width: 31.5em;
+    background-color: #004175;
+    color: white;
+    padding: 0.75rem 2.5rem;
+    border: none;
+    border-radius: 5px;
+}
+
+.loginPage button:hover {
+    background-color: #115280;
+}
+
+
