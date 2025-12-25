@@ -15,7 +15,7 @@
                 <h1>Users</h1>
                 <a href="./newusers.php" class="btn">+ Add User</a>
             </div>
-            <div id="usertable"><?php include 'usertable.php'; ?></div>
+            <div id="usertable"><?php include './includes/usertable.php'; ?></div>
         </div>
        
 
