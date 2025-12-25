@@ -11,7 +11,7 @@
         <div id="newuserform-container">
             <h1>New User</h1>
             <div id="new-user-background"> 
-                <div id="form-area"><?php include './newuserform.php'; ?></div>
+                <div id="form-area"><?php include './includes/newuserform.php'; ?></div>
                 <div id="button-container">
                     <div id="result"></div>
                     <button id="btn-submit">Save</button>
