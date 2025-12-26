@@ -1,4 +1,4 @@
-<?php include_once './dbconfig.php';?>
+<?php require_once './includes/dbconfig.php';?>
 <?php
 // Database connection parameters
 
