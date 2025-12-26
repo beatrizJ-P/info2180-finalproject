@@ -69,7 +69,6 @@ $contacts = $stmt->fetchAll(PDO::FETCH_ASSOC);
     </div>
 </div>
 
-<?=include './includes/footer.php'; ?>
 
 
 
