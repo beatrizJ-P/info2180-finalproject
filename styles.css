@@ -7,7 +7,7 @@ body {
 }
 
 /*HEADER*/
-header {
+.head {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -185,7 +185,7 @@ footer {
     padding:0.5em 1em;
     margin-right:0.5em;
     background-color: #F8F9FA;
-    color: #ccc;
+    color: #8b8b8b;
     border-radius:0.3em;
 }
 
@@ -209,9 +209,7 @@ footer {
 }
 
 .contacts-table {
-    width: 1000px;
-    border-collapse: collapse;
-    margin-top: 1em;
+    width: 100%;
     border-collapse: collapse;
     margin-top: 1em;
     border:transparent 1px;
@@ -219,8 +217,286 @@ footer {
     border-radius: 0.5em;
 }
 
-#table-head {
-    background-color: #eeeaea;
+.contacts-table td,th{
+    text-align: left;
+    padding: 0.5em;
 }
+
+
+.contacts-table th {
+    background-color: #E7ECEF;
+}
+
+
+#company, #email {
+    color:#8b8b8b;
+}
+
+.support{
+    background-color: #9b8afd;
+    color: white;
+    padding: 0.2em 0.5em;
+    border-radius: 0.3em;
+    font-weight: 600;
+}
+
+.sales-lead{
+    background-color: #f1e203;
+    color: black;
+    padding: 0.2em 0.5em;
+    border-radius: 0.3em;
+    font-weight: 600;
+}
+
+.viewbtn:visited, .viewbtn:link {
+    text-decoration: none;
+    color:#1a2edb;
+    padding: 0.5em 1em;
+    border-radius: 0.3em;
+
+}
+
+/*VIEW CONTACT*/
+.view-contact-container {
+    margin-left: 12em;
+    padding: 2em;
+    width:auto;
+    height:auto;
+}
+
+#info-container{
+    clear: both;
+    margin-left:13em;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-style: solid;
+    border-width: thin;
+    box-shadow: 1px 1px 1px grey;
+    border-color: rgb(173, 173, 173);
+    padding: 12px;
+    padding-left:35px;
+    border-radius: 0.3em;
+}
+
+#notes-container{
+    margin-left:13em;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    border-style: solid;
+    border-width: thin;
+    border-color: rgb(173, 173, 173);
+    border-radius: 0.3em;
+    padding: 12px;
+    padding-left:35px;
+    overflow-y: scroll;
+    box-shadow: 1px 1px 1px grey;
+}
+.add-notes{
+    margin-left:13em;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    border-style: solid;
+    border-width: thin;
+    border-color: rgb(173, 173, 173);
+    border-radius: 0.3em;
+    padding: 12px;
+    padding-left:35px;
+    box-shadow: 1px 1px 1px grey;
+
+}
+
+.fetch-notes{
+    max-height:300px;
+    overflow-y: scroll;
+    box-shadow: 1px 1px 1px grey;
+}
+#note-info{
+    border-bottom: thin solid rgb(173, 173, 173);
+    margin-bottom:10px;
+}
+.add-container textarea{
+    width: 100%;
+    height:100px;
+    margin-top:10px;
+    margin-bottom:10px;
+    padding:10px;
+    border-radius:5px;
+    border:1px solid rgb(173, 173, 173);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    box-shadow: 1px 1px 1px grey;
+}
+
+#add-note-btn{
+    background-color: #3347f7;
+    color: white;
+    border: none;
+    padding: 0.5em 1em;
+    border-radius: 0.3em;
+    font-weight: bold;
+    margin-bottom: 1em;
+}
+#add-note-btn:hover {
+    background-color: #1a2edb;
+    cursor: pointer;
+}
+
+.contact-info-data{
+    color:#8b8b8b;
+    margin-top:10px;
+}
+.contact-section{
+    margin-bottom:20px;
+}
+.contact-section h3{
+    border-bottom: thin solid rgb(173, 173, 173);
+    padding-bottom:5px;
+    margin-bottom:10px;
+}
+.contact-section div{
+    display:flex;
+    flex-direction: column;
+}
+.contact-section div div{
+    margin-bottom:5px;
+}
+
+.view-contact-container{
+    margin-left: 12em;
+    padding: 2em;
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    width:auto;
+    height:auto;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#ntitle{
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#assign{
+    background-color: rgb(24, 199, 24);
+    color: black;
+    border: 0.4em;
+    height: 40px;
+    padding: 0.5em 1em;
+    border-radius: 0.5em;
+    font-weight: bold;
+    margin-top: 1em;
+    box-shadow: 1px 1px 1px 1px grey;
+}
+
+#switch{
+    background-color: orange;
+    color: black;
+    border: 0.1em;
+    height: 40px;
+    padding: 0.5em 1em;
+    border-radius: 0.5em;
+    font-weight: bold;
+    margin-top: 1em;
+    box-shadow: 1px 1px 1px 1px grey;
+}
+
+.view-contact-section{
+    background-color: white;
+}
+
+
+/*Add new contact*/
+
+.new-contact-container {
+    margin-left: 13em;
+    padding: 5px;
+    background-color: none;
+    width:auto;
+    height:auto;
+}
+.form-container{
+    margin-left:13em;
+    margin-right: 2em;
+    border-style: solid;
+    background-color: white;
+    border-width: thin;
+    border-color: rgb(173, 173, 173);
+    border-radius: 2px;
+    padding: 12px;
+    padding-left:35px;
+}
+
+
+.fields{
+    width: 90%;
+    padding: 10px;
+}
+
+.form-group{
+    display: flex;
+    flex-direction: row;
+}
+
+#assigned_to{
+    width: 54%;
+    border-radius: 2px;
+    border: 1px;
+    padding: 10px;
+    box-shadow: 1px 1px 1px 1px grey;
+    outline-color: #719ECE;
+    margin-top:5px;
+}
+
+#title{
+    width: 20%;
+    border-radius: 2px;
+    border: 1px;
+    padding: 10px;
+    box-shadow: 1px 1px 1px 1px grey;
+    outline-color: #719ECE;
+    margin-top:5px;
+    
+}
+
+
+#type{
+    width: 100%;
+    border-radius: 2px;
+    border: 1px;
+    padding: 10px;
+    box-shadow: 1px 1px 1px 1px grey;
+    outline-color: #719ECE;
+    margin-top:5px;
+}
+.form-group input{
+    width: 100%;
+    height:35px;
+    margin-top:5px;
+    padding:10px;
+    border-radius:5px;
+    border:1px solid rgb(173, 173, 173);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+#create-contact-btn{
+    background-color: #3347f7;
+    color: white;
+    border: 0.1em;
+    padding: 0.5em 1em;
+    border-radius: 0.5em;
+    font-weight: bold;
+    margin-top: 1em;
+}
+
+.save-button{
+    display: flex;
+    justify-content: right;
+}
+
+
+
+
+
 
 
