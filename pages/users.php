@@ -2,9 +2,8 @@
     include '../includes/sessionconfig.php'; 
     if ($_SESSION['role'] !== 'admin') {
     // Optionally show 403 Forbidden page
-    http_response_code(403);
-    echo "Access denied. Admins only.";
-    exit;
+        header('Location:../includes/redirect_403.php');
+        exit();
 }
 
 ?>

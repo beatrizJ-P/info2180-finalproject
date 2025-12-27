@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 27, 2025 at 08:11 AM
+-- Generation Time: Dec 27, 2025 at 10:23 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -47,8 +47,8 @@ CREATE TABLE `contacts` (
 --
 
 INSERT INTO `contacts` (`id`, `title`, `firstname`, `lastname`, `email`, `telephone`, `company`, `type`, `assigned_to`, `created_by`, `created_at`, `updated_at`) VALUES
-(1, 'Mr', 'Tim', 'Bim', 'tbim@gmail.com', '8765443920', 'BMW', 'Sales Lead', 2, 2, '2025-12-26 17:28:02', '2025-12-27 05:30:07'),
-(2, 'Mrs', 'Jane', 'Doe', 'jd@gmail.com', '8765332312', 'Albert Winston Ltd.', 'Support', 3, 3, '2025-12-26 17:53:07', '2025-12-26 17:53:07');
+(1, 'Mr', 'Tim', 'Bim', 'tbim@gmail.com', '8765443920', 'BMW', 'Support', 2, 2, '2025-12-26 17:28:02', '2025-12-27 20:48:43'),
+(2, 'Mrs', 'Jane', 'Doe', 'jd@gmail.com', '8765332312', 'Albert Winston Ltd.', 'Sales Lead', 3, 3, '2025-12-26 17:53:07', '2025-12-27 20:48:55');
 
 -- --------------------------------------------------------
 
@@ -93,9 +93,10 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `firstname`, `lastname`, `password`, `email`, `role`, `created_at`) VALUES
-(1, 'Beatrice', 'Matthias', '$2y$10$IMCzbjrcgSMmJahXstRujuJW2tMSNpJXnts8KOUx6k/1FluDnvEyC', 'admin@project2.com', 'Admin', '2025-12-23 04:47:36'),
-(2, 'Pam', 'Bim', 'pbim2', 'pbim@gmail.com', 'Admin', '2025-12-26 17:27:17'),
-(3, 'Sukanayna', 'Hoo', 'pword123', 'sh@gmail.com', 'Admin', '2025-12-26 17:29:09');
+(1, 'Beatrice', 'Matthias', '$2y$10$IMCzbjrcgSMmJahXstRujuJW2tMSNpJXnts8KOUx6k/1FluDnvEyC', 'admin@project2.com', 'admin', '2025-12-23 04:47:36'),
+(2, 'Pam', 'Bim', '$2y$10$bqy4jaWL8MHk9m9u.TD.D.bkslnF5iy8AyjMTyshB91QEF.8KApMm', 'pbim@gmail.com', 'admin', '2025-12-27 20:53:21'),
+(3, 'Sukanayna', 'Hoo', '$2y$10$ZbK8VYlLzPLr6p8R/zNXFOt.E3O2ziLQPlI2uhfyngeiSG1Cj..Ym', 'shoo@gmail.com', 'member', '2025-12-27 20:54:18'),
+(4, 'Daniel', 'Bongham', '$2y$10$VIr4jNbC9XYXsf2P3XGRxu6mmKuIDbZ/84cZjxkTsIyii5OJP0Bna', 'something@example.com', 'member', '2025-12-27 21:20:37');
 
 --
 -- Indexes for dumped tables
@@ -133,19 +134,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `contacts`
 --
 ALTER TABLE `contacts`
-  MODIFY `id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `notes`
 --
 ALTER TABLE `notes`
-  MODIFY `id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(8) NOT NULL AUTO_INCREMENT COMMENT 'Row ID and Table Primary Key', AUTO_INCREMENT=4;
+  MODIFY `id` int(8) NOT NULL AUTO_INCREMENT COMMENT 'Row ID and Table Primary Key', AUTO_INCREMENT=5;
 
 --
 -- Constraints for dumped tables
