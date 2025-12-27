@@ -1,8 +1,13 @@
 <?php
 session_start();
-if (isset($_SESSION['id'])){
-    session_destroy();
-    header('Location:login.php');
+//if (isset($_SESSION['id'])){
+   // session_destroy();
+    //header('Location:login.php');
+    //exit;
+//}
+if ($_SESSION['logged_in'] === true) {
+} else {
+    header("Location: login.php");
     exit;
 }
 
