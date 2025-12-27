@@ -18,6 +18,8 @@
 
                 <button type = "submit" id = "loginBtn">Login</button>
             </form>
+            <div id="loginError">
+            </div>
         </main>
         <?php include "./includes/footer.php" ?>
 </body>
