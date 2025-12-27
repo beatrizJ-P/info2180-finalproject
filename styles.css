@@ -209,10 +209,11 @@ footer {
 }
 
 .contacts-table {
+    display:table;
     width: 100%;
     border-collapse: collapse;
     margin-top: 1em;
-    border:transparent 1px;
+    border: 2px solid #eeeaea;
     padding: 1em;
     border-radius: 0.5em;
 }
@@ -220,6 +221,7 @@ footer {
 .contacts-table td,th{
     text-align: left;
     padding: 0.5em;
+    border-bottom: 1px solid #eeeaea;
 }
 
 
@@ -494,7 +496,120 @@ footer {
     justify-content: right;
 }
 
+/*DANIEL Users*/
+#daniel-users-container{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin-left: 1em;
+    padding: 2em;
+}
+#daniel-users-container table {
+    border: 2px solid #eeeaea;
+    border-collapse: collapse;
+    width: 1100px;
+    margin-bottom: 1em;
+    background-color: #FFFFFF;
+    border-radius: 8px;
+}
 
+#daniel-users-container table tr {
+  border-bottom: 1px solid #eeeaea;
+}
+#daniel-users-container th {
+    background-color: #f2f4f5;
+}
+#daniel-users-container th, td {
+    
+    padding: 8px;
+    text-align: left;
+}
+#usertable-container{
+    margin-left: 10em;
+    background-color: #E7ECEF;
+    
+}
+#usertable{
+    background-color: #FFFFFF;
+    padding: 20px;
+    border-radius: 8px;
+}
+.btn{
+    text-decoration: none;
+    background-color: #004175;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+#form-area{
+    display: flex;
+    flex-direction: column;
+}
+#form-area {
+    display: grid;
+    grid-template-columns: repeat(2, 4fr); /* 2 fields per row */
+    gap: 16px;
+}
+#table-header-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1em;
+    padding-right: 2em;
+}
+.gridItem{
+    display: flex;
+    flex-direction: column; /* label above input */
+}
+.gridItem label{
+    font-size: 18px;
+}
+#newuserform-container{
+    margin-left: 15em;
+    
+}
+#new-user-background{
+    background-color: #fff;
+    padding: 20px;
+    margin-right: 3em;
+}
+#form-area label{
+    margin-bottom: 5px;
+    font-weight: bold;
+    padding: 4px;
+}
+#form-area input, select{
+    padding: 8px;
+    border: 1px solid #747171;
+    border-radius: 4px;
+    font-size: 16px;
+}
+#form-area input:focus, select:focus{
+    outline: none;
+    border-color: #004175;
+    box-shadow: 0 0 5px rgba(0, 65, 117, 0.5);
+}
+#new-user-background button{
+    padding: 10px;
+    margin: 15px;
+    width: 10em;
+    background-color: #004175;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+#new-user-background button:hover{
+    background-color: #115280;
+}
+#button-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #f2f4f5;
+    margin: 5px;
+}
 
 
 
