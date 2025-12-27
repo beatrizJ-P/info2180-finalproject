@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-<?php require_once './includes/dbconfig.php';?>
-=======
 <?php require_once '../includes/dbconfig.php';?>
->>>>>>> Hoo-Workspace
 <?php
 // Database connection parameters
 

@@ -31,11 +31,15 @@ $stmt = $conn->prepare($exc);
 $stmt->execute($id);
 $contacts = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
-
+<head>
+    <title>Dashboard</title>
+</head>
 <div class="main-content">
     <div class="dashboard-header">
         <h2>Dashboard</h2>
+        <a href="./new-contact.php">
         <button id="add-contact-btn">+ Add Contact</button>
+        </a>
     </div>
 
 

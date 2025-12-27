@@ -59,7 +59,10 @@ try {
 }
 ?>
 
-
+<head>
+    <title>View Contact</title>
+    <script src="../js/view.js" defer></script>
+</head>
 <section class ='view-contact-section'>
     <header class='page-head'>
         <div class="view-contact-container">
@@ -71,6 +74,7 @@ try {
                 </p>
             </div>   
             <div class='btns'>
+                <input type="hidden" id="contact-id" value="<?= (int)$contact['id'] ?>">
                 <button id='assign'><i class ='fas fa-hand-paper'></i> Assign To Me</button> 
                 <button id='switch'><i class ='fas fa-exchange'></i> Switch To <?php if ($contact['type']=="Support") {echo "Sales Lead";} else{echo "Support";}?></button> 
             </div>    
@@ -105,7 +109,7 @@ try {
         <div id='note-info'>
             <label for='notes'><i class='fa-sharp fa-solid fa-pen-to-square'></i> Notes</label>
         </div>
-        <div class='fetch-notes'>
+        <div id='fetch-notes'>
             <?php foreach($notes as $note){
                 $stmt = $conn->prepare("SELECT * FROM users WHERE id = ".$note['created_by']);
                 $stmt->execute();
@@ -122,7 +126,7 @@ try {
     </div>
     <br>
     <div class='add-notes'>
-        <form method='POST' action='submit'>
+        <form id="add-note-form" method='POST' action='submit'>
             <div class='add-container'>
                 <label for='add-notes'>Add a note about <?=$contact['firstname']?></label>
                 <textarea name='add' placeholder="Enter details here."></textarea>

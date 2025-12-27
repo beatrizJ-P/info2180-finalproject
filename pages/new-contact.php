@@ -19,6 +19,10 @@ $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <title>New Contact</title>
+        <script src="../js/new-contact.js" defer></script>
+    </head>
 <body>
     <section>
         <header class='page-head'>
@@ -85,8 +89,9 @@ $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     </select>
                 </div>
                 <div class="save-button">
-                    <button type="submit" id="create-contact-btn">Save</button>
+                    <button type="button" id="create-contact-btn">Save</button>
             </div>
+            <div id="result"></div>
             </form>  
         </div>  
     </section>

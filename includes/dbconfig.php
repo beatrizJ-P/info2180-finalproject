@@ -2,7 +2,7 @@
 $localhost = "localhost";
 $username = "root";
 $password = "";
-$dbname = "dolphin_crm";
+$dbname = "schema";
 
 try{
     $conn = new PDO("mysql:host=$localhost;dbname=$dbname", $username, $password);

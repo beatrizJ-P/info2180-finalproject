@@ -1,4 +1,4 @@
-url ="./includes/process_new_user.php"
+url ="../includes/process_new_user.php"
 console.log("whats up chat?");
 document.getElementById("btn-submit").addEventListener("click", submitUser);
 //document.getElementById("daniel-add-new-user-btn").addEventListener("click", );
@@ -13,6 +13,10 @@ function submitUser() {
     const role = document.getElementById("role").value;
     if (!firstName || !lastName || !email) {
         window.alert("Please enter valid user information.");
+        return;
+    }
+    if(firstName.length > 32 || lastName.length > 32){
+        window.alert("First and last name cannot exceed 32 characters.");
         return;
     }
     if(!password){
