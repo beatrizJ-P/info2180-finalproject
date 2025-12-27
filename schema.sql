@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 23, 2025 at 05:49 AM
+-- Generation Time: Dec 27, 2025 at 08:11 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -42,6 +42,14 @@ CREATE TABLE `contacts` (
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `contacts`
+--
+
+INSERT INTO `contacts` (`id`, `title`, `firstname`, `lastname`, `email`, `telephone`, `company`, `type`, `assigned_to`, `created_by`, `created_at`, `updated_at`) VALUES
+(1, 'Mr', 'Tim', 'Bim', 'tbim@gmail.com', '8765443920', 'BMW', 'Sales Lead', 2, 2, '2025-12-26 17:28:02', '2025-12-27 05:30:07'),
+(2, 'Mrs', 'Jane', 'Doe', 'jd@gmail.com', '8765332312', 'Albert Winston Ltd.', 'Support', 3, 3, '2025-12-26 17:53:07', '2025-12-26 17:53:07');
+
 -- --------------------------------------------------------
 
 --
@@ -55,6 +63,14 @@ CREATE TABLE `notes` (
   `created_by` int(8) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `notes`
+--
+
+INSERT INTO `notes` (`id`, `contact_id`, `comment`, `created_by`, `created_at`) VALUES
+(1, 1, 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.', 3, '2025-12-26 22:05:50'),
+(2, 1, 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.', 1, '2025-12-25 22:05:50');
 
 -- --------------------------------------------------------
 
@@ -77,7 +93,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `firstname`, `lastname`, `password`, `email`, `role`, `created_at`) VALUES
-(1, 'Beatrice', 'Matthias', '$2y$10$IMCzbjrcgSMmJahXstRujuJW2tMSNpJXnts8KOUx6k/1FluDnvEyC', 'admin@project2.com', 'Admin', '2025-12-23 04:47:36');
+(1, 'Beatrice', 'Matthias', '$2y$10$IMCzbjrcgSMmJahXstRujuJW2tMSNpJXnts8KOUx6k/1FluDnvEyC', 'admin@project2.com', 'Admin', '2025-12-23 04:47:36'),
+(2, 'Pam', 'Bim', 'pbim2', 'pbim@gmail.com', 'Admin', '2025-12-26 17:27:17'),
+(3, 'Sukanayna', 'Hoo', 'pword123', 'sh@gmail.com', 'Admin', '2025-12-26 17:29:09');
 
 --
 -- Indexes for dumped tables
@@ -115,19 +133,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `contacts`
 --
 ALTER TABLE `contacts`
-  MODIFY `id` int(8) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `notes`
 --
 ALTER TABLE `notes`
-  MODIFY `id` int(8) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(8) NOT NULL AUTO_INCREMENT COMMENT 'Row ID and Table Primary Key', AUTO_INCREMENT=2;
+  MODIFY `id` int(8) NOT NULL AUTO_INCREMENT COMMENT 'Row ID and Table Primary Key', AUTO_INCREMENT=4;
 
 --
 -- Constraints for dumped tables
