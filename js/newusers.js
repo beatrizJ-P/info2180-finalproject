@@ -27,6 +27,17 @@ function submitUser() {
         window.alert("Password must be at least 8 characters long.");
         return;
     }
+    const hasNumber = /\d/.test(password);
+    const hasUppercase = /[A-Z]/.test(password);
+    const hasLetter = /[a-zA-Z]/.test(password);
+
+    if (!hasNumber || !hasUppercase || !hasLetter) {
+    console.log("Password is invalid");
+    window.alert("Password must contain at least one letter, one uppercase letter, and one number.");
+    return;
+    } else {
+    console.log("Password is valid");
+    
     const newXhttp = new XMLHttpRequest();
     newXhttp.open("POST", url, true);
     newXhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
@@ -40,4 +51,5 @@ function submitUser() {
     };
     newXhttp.send("firstname="+encodeURIComponent(firstName)+"&lastname="+encodeURIComponent(lastName)+"&email="+encodeURIComponent(email)+"&password="+encodeURIComponent(password)+"&role="+encodeURIComponent(role));
     //console.log(firstName, lastName, email, password, role);
+    }
 }
