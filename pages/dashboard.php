@@ -1,9 +1,15 @@
 <?php
 session_start();
-require './includes/dbconfig.php';
-include './includes/metadata.php';
-include './includes/header.php';
-include './includes/sidebar.php';
+if (isset($_SESSION['id'])){
+    session_destroy();
+    header('Location:login.php');
+    exit;
+}
+
+require '../includes/dbconfig.php';
+include '../includes/metadata.php';
+include '../includes/header.php';
+include '../includes/sidebar.php';
 
 $fltr = $_GET['filter'] ?? 'all';
 $id =[];
@@ -42,6 +48,7 @@ $contacts = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <button id="fltr_btn" data-filter="Sales Leads" <?= $fltr === 'Sales Leads' ? 'class="active"' : '' ?>>Sales Leads</button>
             <button id="fltr_btn" data-filter="Support" <?= $fltr === 'Support' ? 'class="active"' : '' ?>>Support</button>
             <button id="fltr_btn" data-filter="Assigned to Me" <?= $fltr === 'Assigned to Me' ? 'class="active"' : '' ?>>Assigned to Me</button>
+
         </div>
 
         <table class="contacts-table">
@@ -55,13 +62,17 @@ $contacts = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($contacts as $contact): ?>
+                <?php foreach ($contacts as $contact):
+                    $type;
+                    if($contact['type'] == "Support"){$type = "support";}
+                    if($contact['type'] == "Sales Lead"){$type = "sales-lead";} 
+                    ?>
                     <tr>
-                        <td><?= $contact['title'].' '.$contact['firstname']. ' '.$contact['lastname']?></td>
-                        <td><?= $contact['email'] ?></td>
-                        <td><?= $contact['company']?></td>
-                        <td><?= $contact['type'] ?></td>
-                        <td><a href="" class="view-button" data="<?= $contact['assigned_to'] ?>"> View</a></td>
+                        <td><strong><?= $contact['title'].'. '.$contact['firstname']. ' '.$contact['lastname']?></strong></td>
+                        <td id="email"><?= $contact['email'] ?></td>
+                        <td id="company"><?= $contact['company']?></td>
+                        <td><span class="<?=$type ?>"><?= $contact['type'] ?></span></td>
+                        <td><a href="view.php?id=<?= $contact['id']?>" class="viewbtn"> View</a></td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>
@@ -69,7 +80,6 @@ $contacts = $stmt->fetchAll(PDO::FETCH_ASSOC);
     </div>
 </div>
 
-<?=include './includes/footer.php'; ?>
 
 
 
