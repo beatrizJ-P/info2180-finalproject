@@ -1,8 +1,13 @@
 <?php 
 session_start();
-if (isset($_SESSION['id'])){
-    session_destroy();
-    header('Location:login.php');
+//if (isset($_SESSION['id'])){
+  //  session_destroy();
+    //header('Location:login.php');
+    //exit;
+//}
+if ($_SESSION['logged_in'] === true) {
+} else {
+    header("Location: login.php");
     exit;
 }
 
@@ -132,6 +137,7 @@ try {
                 <textarea name='add' placeholder="Enter details here."></textarea>
             </div>
             <div class='btn-container'>
+                <input type="hidden" id="user-id" value="<?= (int)$_SESSION['user_id'] ?>">
                 <button id='add-note-btn' type='submit' class='<?=$id?>'>Add Note</button>
             </div>
      
