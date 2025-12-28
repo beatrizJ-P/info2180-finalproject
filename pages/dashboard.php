@@ -79,7 +79,7 @@ $contacts = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     if($contact['type'] == "Sales Lead"){$type = "sales-lead";} 
                     ?>
                     <tr>
-                        <td><strong><?= $contact['title'].'. '.$contact['firstname']. ' '.$contact['lastname']?></strong></td>
+                        <td><strong><?= $contact['title'].' '.$contact['firstname']. ' '.$contact['lastname']?></strong></td>
                         <td id="email"><?= $contact['email'] ?></td>
                         <td id="company"><?= $contact['company']?></td>
                         <td><span class="<?=$type ?>"><?= $contact['type'] ?></span></td>
