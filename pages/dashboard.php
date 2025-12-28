@@ -47,7 +47,7 @@ $contacts = $stmt->fetchAll(PDO::FETCH_ASSOC);
     
         <div class="filter-options">
 
-            <span id="filter-label"><img src="images/filter-icon.png" alt="Filter Icon" id="filter-icon"> Filter by: </>
+            <span id="filter-label"><img src="../images/filter-icon.png" alt="Filter Icon" id="filter-icon"> Filter by: </>
             <button id="fltr_btn" data-filter="all" <?= $fltr === 'all' ? 'class="active"' : '' ?>>All</button>
             <button id="fltr_btn" data-filter="Sales Leads" <?= $fltr === 'Sales Leads' ? 'class="active"' : '' ?>>Sales Leads</button>
             <button id="fltr_btn" data-filter="Support" <?= $fltr === 'Support' ? 'class="active"' : '' ?>>Support</button>
