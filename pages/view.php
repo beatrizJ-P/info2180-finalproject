@@ -72,7 +72,7 @@ try {
     <header class='page-head'>
         <div class="view-contact-container">
             <div class='contact-head'>
-                <i class='fas fa-user-circle' style='font-size:60px; position:relative; color:#ccc;'></i> <strong id="ntitle"><?=$contact['title'].'.'.' '.$contact['firstname'].' '.$contact['lastname']?></strong>
+                <i class='fas fa-user-circle' style='font-size:60px; position:relative; color:#ccc;'></i> <strong id="ntitle"><?=$contact['title'].' '.$contact['firstname'].' '.$contact['lastname']?></strong>
                 <p>
                     Created on  <?= convertDateFormat(substr($contact['created_at'],0,10)); ?> by  <?= $name; ?> <br>
                     Updated on  <?= convertDateFormat(substr($contact['updated_at'],0,10)); ?>
