@@ -22,8 +22,8 @@ if (isset($_POST['user_id'])&& isset($_POST['contact_id'])) {
     $stmt->bindParam(':user_id', $user_id);
     $stmt->bindParam(':contact_id', $contact_id);
     $stmt->execute();
-    $stmt = $conn->prepare("SELECT firstname, lastname FROM contacts WHERE id = :contact_id");
-    $stmt->bindParam(':contact_id', $contact_id);
+    $stmt = $conn->prepare("SELECT firstname, lastname FROM users WHERE id = :user_id");
+    $stmt->bindParam(':user_id', $user_id);
     $stmt->execute();
     $s = $stmt->fetchAll(PDO::FETCH_ASSOC);
     $response = ["Success", $s[0]['firstname'].' '.$s[0]['lastname']];
