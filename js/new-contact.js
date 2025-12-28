@@ -12,6 +12,8 @@ function submitContact() {
     const company = document.getElementById("company").value.trim();
     const type = document.getElementById("type").value.trim();
     const assignedTo = document.getElementById("assigned_to").value.trim();
+    const userId = document.getElementById("user-id").value;
+    console.log("User ID:", userId);
     if (!title || !firstName || !lastName || !email || !phone || !company || !type || !assignedTo) {
         window.alert("Please enter valid contact information.");
         return;
@@ -32,6 +34,6 @@ function submitContact() {
            document.getElementById("result").innerHTML="we got an Error: " + this.status;
         }
     };
-    newXhttp.send("title="+encodeURIComponent(title)+"&firstname="+encodeURIComponent(firstName)+"&lastname="+encodeURIComponent(lastName)+"&email="+encodeURIComponent(email)+"&phone="+encodeURIComponent(phone)+"&company="+encodeURIComponent(company)+"&type="+encodeURIComponent(type)+"&assigned_to="+encodeURIComponent(assignedTo));
+    newXhttp.send("title="+encodeURIComponent(title)+"&firstname="+encodeURIComponent(firstName)+"&lastname="+encodeURIComponent(lastName)+"&email="+encodeURIComponent(email)+"&phone="+encodeURIComponent(phone)+"&company="+encodeURIComponent(company)+"&type="+encodeURIComponent(type)+"&assigned_to="+encodeURIComponent(assignedTo)+"&user_id="+encodeURIComponent(userId));
     //console.log(firstName, lastName, email, phone, address, city, state, zip);
 }
