@@ -1,8 +1,13 @@
 <?php
 session_start();
-if (isset($_SESSION['id'])){
-    session_destroy();
-    header('Location:login.php');
+//if (isset($_SESSION['id'])){
+   // session_destroy();
+    //header('Location:login.php');
+    //exit;
+//}
+if ($_SESSION['logged_in'] === true) {
+} else {
+    header("Location: login.php");
     exit;
 }
 
@@ -33,6 +38,7 @@ $contacts = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <head>
     <title>Dashboard</title>
+    <script src="../js/dashboard.js" defer></script>
 </head>
 <div class="main-content">
     <div class="dashboard-header">
@@ -48,10 +54,18 @@ $contacts = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <div class="filter-options">
 
             <span id="filter-label"><img src="../images/filter-icon.png" alt="Filter Icon" id="filter-icon"> Filter by: </>
+<<<<<<< HEAD
             <button id="fltr_btn" data-filter="all" <?= $fltr === 'all' ? 'class="active"' : '' ?>>All</button>
             <button id="fltr_btn" data-filter="Sales Leads" <?= $fltr === 'Sales Leads' ? 'class="active"' : '' ?>>Sales Leads</button>
             <button id="fltr_btn" data-filter="Support" <?= $fltr === 'Support' ? 'class="active"' : '' ?>>Support</button>
             <button id="fltr_btn" data-filter="Assigned to Me" <?= $fltr === 'Assigned to Me' ? 'class="active"' : '' ?>>Assigned to Me</button>
+=======
+            <input type="hidden" id="user-id" value="<?= (int)$_SESSION['user_id'] ?>">
+            <button id="fltr_btn_all" data-filter="all" <?= $fltr === 'all' ? 'class="active filter-all"' : '' ?>>All</button>
+            <button id="fltr_btn_sales" data-filter="Sales Leads" <?= $fltr === 'Sales Lead' ? 'class="active filter-sales"' : '' ?>>Sales Leads</button>
+            <button id="fltr_btn_support" data-filter="Support" <?= $fltr === 'Support' ? 'class="active filter-support"' : '' ?>>Support</button>
+            <button id="fltr_btn_assigned" data-filter="Assigned to Me" <?= $fltr === 'Assigned to Me' ? 'class="active filter-assigned"' : '' ?>>Assigned to Me</button>
+>>>>>>> 10d058ee34386f0847a99c0b211309cf307da6de
 
         </div>
 
@@ -65,7 +79,7 @@ $contacts = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     <th></th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody id="results">
                 <?php foreach ($contacts as $contact):
                     $type;
                     if($contact['type'] == "Support"){$type = "support";}

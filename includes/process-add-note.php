@@ -1,13 +1,15 @@
 <?php 
     require_once 'dbconfig.php';
 
-    if (isset($_POST['note']) && isset($_POST['contact_id'])) {
+    if (isset($_POST['note']) && isset($_POST['contact_id']) && isset($_POST['user_id'])) {
         if (filter_var($_POST['contact_id'], FILTER_VALIDATE_INT) !== false) {
             $note = htmlspecialchars($_POST['note']);
             $contact_id = $_POST['contact_id'];
-            $stmt = $conn->prepare("INSERT INTO notes (contact_id, comment) VALUES (:contact_id, :note)");
+            $user_id = $_POST['user_id'];
+            $stmt = $conn->prepare("INSERT INTO notes (contact_id, comment, created_by) VALUES (:contact_id, :note, :created_by)");
             $stmt->bindParam(':contact_id', $contact_id);
             $stmt->bindParam(':note', $note);
+            $stmt->bindParam(':created_by', $user_id);
             if ($stmt->execute()) {
                 $stmt = $conn->prepare("SELECT * FROM notes where contact_id= :contact_id");
                 $stmt->bindParam(':contact_id', $contact_id);
