@@ -47,8 +47,8 @@ CREATE TABLE `contacts` (
 --
 
 INSERT INTO `contacts` (`id`, `title`, `firstname`, `lastname`, `email`, `telephone`, `company`, `type`, `assigned_to`, `created_by`, `created_at`, `updated_at`) VALUES
-(1, 'Mr', 'Tim', 'Bim', 'tbim@gmail.com', '8765443920', 'BMW', 'Support', 2, 2, '2025-12-26 17:28:02', '2025-12-27 20:48:43'),
-(2, 'Mrs', 'Jane', 'Doe', 'jd@gmail.com', '8765332312', 'Albert Winston Ltd.', 'Sales Lead', 3, 3, '2025-12-26 17:53:07', '2025-12-27 20:48:55');
+(1, 'Mr.', 'Tim', 'Bim', 'tbim@gmail.com', '8765443920', 'BMW', 'Support', 2, 2, '2025-12-26 17:28:02', '2025-12-27 20:48:43'),
+(2, 'Mrs.', 'Jane', 'Doe', 'jd@gmail.com', '8765332312', 'Albert Winston Ltd.', 'Sales Lead', 3, 3, '2025-12-26 17:53:07', '2025-12-27 20:48:55');
 
 -- --------------------------------------------------------
 
