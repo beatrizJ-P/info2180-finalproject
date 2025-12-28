@@ -94,6 +94,7 @@ $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     </select>
                 </div>
                 <div class="save-button">
+                    <input type="hidden" id="user-id" value="<?= (int)$_SESSION['user_id'] ?>">
                     <button type="button" id="create-contact-btn">Save</button>
             </div>
             <div id="result"></div>

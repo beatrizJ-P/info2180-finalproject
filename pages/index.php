@@ -4,10 +4,9 @@
         <?php include "../includes/metadata.php" ?>
         <title>Dolphin CRM Welcome</title>
     </head>
-    <body>
+    <body class = "welcome">
         <div class = "main">
             <div class = "left">
-                <img src="../images/dolphinHome.jpg" class= "dolphinHome">
             </div>
 
             <div class = "right">
