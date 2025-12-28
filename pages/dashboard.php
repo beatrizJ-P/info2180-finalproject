@@ -52,11 +52,11 @@ $contacts = $stmt->fetchAll(PDO::FETCH_ASSOC);
     
         <div class="filter-options">
 
-            <span id="filter-label"><img src="images/filter-icon.png" alt="Filter Icon" id="filter-icon"> Filter by: </>
-            <button id="fltr_btn" data-filter="all" <?= $fltr === 'all' ? 'class="active"' : '' ?>>All</button>
-            <button id="fltr_btn" data-filter="Sales Leads" <?= $fltr === 'Sales Leads' ? 'class="active"' : '' ?>>Sales Leads</button>
-            <button id="fltr_btn" data-filter="Support" <?= $fltr === 'Support' ? 'class="active"' : '' ?>>Support</button>
-            <button id="fltr_btn" data-filter="Assigned to Me" <?= $fltr === 'Assigned to Me' ? 'class="active"' : '' ?>>Assigned to Me</button>
+            <span id="filter-label"><img src="../images/filter-icon.png" alt="Filter Icon" id="filter-icon"> Filter by: </>
+            <button id="fltr_btn" data-filter="all" <?= $fltr === 'all' ? 'class="active filter-all"' : '' ?>>All</button>
+            <button id="fltr_btn" data-filter="Sales Leads" <?= $fltr === 'Sales Lead' ? 'class="active filter-sales"' : '' ?>>Sales Leads</button>
+            <button id="fltr_btn" data-filter="Support" <?= $fltr === 'Support' ? 'class="active filter-support"' : '' ?>>Support</button>
+            <button id="fltr_btn" data-filter="Assigned to Me" <?= $fltr === 'Assigned to Me' ? 'class="active filter-assigned"' : '' ?>>Assigned to Me</button>
 
         </div>
 
