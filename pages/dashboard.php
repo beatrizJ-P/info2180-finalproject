@@ -50,24 +50,17 @@ $contacts = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 
     <div class="dashboard-container">
-    
-        <div class="filter-options">
+            <div class="filter-options">
 
-            <span id="filter-label"><img src="../images/filter-icon.png" alt="Filter Icon" id="filter-icon"> Filter by: </>
-<<<<<<< HEAD
-            <button id="fltr_btn" data-filter="all" <?= $fltr === 'all' ? 'class="active"' : '' ?>>All</button>
-            <button id="fltr_btn" data-filter="Sales Leads" <?= $fltr === 'Sales Leads' ? 'class="active"' : '' ?>>Sales Leads</button>
-            <button id="fltr_btn" data-filter="Support" <?= $fltr === 'Support' ? 'class="active"' : '' ?>>Support</button>
-            <button id="fltr_btn" data-filter="Assigned to Me" <?= $fltr === 'Assigned to Me' ? 'class="active"' : '' ?>>Assigned to Me</button>
-=======
-            <input type="hidden" id="user-id" value="<?= (int)$_SESSION['user_id'] ?>">
-            <button id="fltr_btn_all" data-filter="all" <?= $fltr === 'all' ? 'class="active filter-all"' : '' ?>>All</button>
-            <button id="fltr_btn_sales" data-filter="Sales Leads" <?= $fltr === 'Sales Lead' ? 'class="active filter-sales"' : '' ?>>Sales Leads</button>
-            <button id="fltr_btn_support" data-filter="Support" <?= $fltr === 'Support' ? 'class="active filter-support"' : '' ?>>Support</button>
-            <button id="fltr_btn_assigned" data-filter="Assigned to Me" <?= $fltr === 'Assigned to Me' ? 'class="active filter-assigned"' : '' ?>>Assigned to Me</button>
->>>>>>> 10d058ee34386f0847a99c0b211309cf307da6de
+                <span id="filter-label"><img src="../images/filter-icon.png" alt="Filter Icon" id="filter-icon"> Filter by: </><span>
+                <input type="hidden" id="user-id" value="<?= (int)$_SESSION['user_id'] ?>">
+                <button id="fltr-btn-all" data-filter="all" <?= $fltr === 'all' ? 'class="active filter-all"' : '' ?>>All</button>
+                <button id="fltr-btn-sales" data-filter="Sales Leads" <?= $fltr === 'Sales Lead' ? 'class="active filter-sales"' : '' ?>>Sales Leads</button>
+                <button id="fltr-btn-support" data-filter="Support" <?= $fltr === 'Support' ? 'class="active filter-support"' : '' ?>>Support</button>
+                <button id="fltr-btn-assigned" data-filter="Assigned to Me" <?= $fltr === 'Assigned to Me' ? 'class="active filter-assigned"' : '' ?>>Assigned to Me</button>
+                <hr class="slider" id="slider_indicator">
 
-        </div>
+            </div>
 
         <table class="contacts-table">
             <thead id="table-head">

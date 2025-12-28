@@ -191,27 +191,38 @@ footer {
     width: 1em;
     height: 1em;
 }
+.filter-options {
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+    padding-top: 10px;
+}
 
-#fltr_btn {
+#fltr-btn-all, #fltr-btn-assigned, #fltr-btn-sales, #fltr-btn-support {
     border:none;
     font-weight: bold;    
-    padding:0.5em 1em;
+    padding:10px 20px;
     margin-right:0.5em;
-    background-color: #F8F9FA;
+    background: none;
+    cursor: pointer;
     color: #8b8b8b;
-    border-radius:0.3em;
+    position: relative;
+    z-index: 1;
 }
 
-#fltr_btn:active {
-    color:#3347f7;
-    text-decoration-color: #3347f7;
-    text-decoration: underline;
-
+.slider {
+    border: none;
+    height: 2px;
+    background-color: #004175;
+    margin:0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width:0;
+    transition: left 0.3s ease, width 0.3s ease;
 }
 
-.filter-options {
-    margin-bottom: 1em;
-}
+
 
 .dashboard-container {
     width: 1000px;
