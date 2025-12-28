@@ -43,12 +43,19 @@ function assignContact() {
     newXhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     newXhttp.onload = function checkStatus() {
         if (this.status === 200) {
-            //console.log("Contact assigned successfully "+this.responseText);
-            document.getElementById("assign").innerHTML=this.responseText;
+            //console.log("Contact assigned successfully "+JSON.parse(this.responseText).split(",")[1]);
+            const status = JSON.parse(this.responseText)[0];
+            console.log("Status: " + status);
+            console.log(document.querySelector("#company-info p:nth-of-type(2)").textContent);
+            const assignedTo = JSON.parse(this.responseText)[1];
+            
+            console.log("Assigned To: " + assignedTo);
+            document.getElementById("assign").innerHTML=status
             setTimeout(() => {
             document.getElementById("assign").innerHTML = "<i class ='fas fa-hand-paper'></i> Assign to Me";
+            document.querySelector("#company-info p:nth-of-type(2)").textContent = assignedTo;
             }, 3000);
-            
+           // document.getElementById("response-assigned").innerHTML = "Assigned to: " + assignedTo;
         }
         else {
             window.alert("we got an Error: " + this.status);

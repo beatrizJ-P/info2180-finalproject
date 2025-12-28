@@ -103,7 +103,7 @@ try {
                 <?=$contact['company']?>
             </p>
        
-            <label for="assigned"><h4>Assigned To</h4></label>
+            <label id="response-assigned" for="assigned"><h4>Assigned To</h4></label>
             <p>
                 <?=$aname?>
             </p>
